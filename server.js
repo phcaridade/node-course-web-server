@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
+
 var app = express();
 
 //set configurations (key, value)
@@ -71,7 +73,7 @@ app.get('/bad', (req, res) => {
     });
 });
 
-var server = app.listen(3000, () => {
+var server = app.listen(port, () => {
     var host = server.address().address
     var port = server.address().port
     console.log(`Server is up at ${host} port ${port}`);
